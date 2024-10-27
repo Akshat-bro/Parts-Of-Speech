@@ -1,0 +1,245 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    color: #333333;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Navigation styles */
+nav {
+    background-color: rgba(255, 165, 0, 0.9); /* Orange with opacity */
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff0000; /* Red */
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #ffffff;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+    background-color: #ff0000; /* Red */
+}
+
+/* Section styles */
+.section {
+    padding: 120px 20px 100px 20px;
+    text-align: center;
+    margin-top: 60px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 2px solid #ff6f61; /* Darker Orange */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #ff6f61; /* Darker Orange */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards;
+    font-weight: 700;
+}
+
+.section p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.2s;
+}
+
+.examples {
+    background-color: #ffecd2; /* Light Orange */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #ff6f61; /* Darker Orange */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease forwards 0.4s;
+}
+
+.examples p {
+    font-weight: bold;
+    color: #ff6f61; /* Darker Orange */
+}
+
+/* Animation for line effect */
+.line-effect {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    animation: lineGrow 2s ease-in-out infinite;
+}
+
+/* Keyframes */
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes lineGrow {
+    0% {
+        width: 0;
+        left: 0;
+        background-color: #ff6f61; /* Darker Orange */
+    }
+    25% {
+        width: 25%;
+        left: 0;
+        background-color: #ff6f61; /* Darker Orange */
+    }
+    50% {
+        width: 50%;
+        left: 0;
+        background-color: #ff0000; /* Red */
+    }
+    75% {
+        width: 75%;
+        left: 0;
+        background-color: #ff0000; /* Red */
+    }
+    100% {
+        width: 100%;
+        left: 0;
+        background-color: #00bfff; /* Dodger Blue */
+    }
+}
+
+/* Typing text animation */
+.typing-text {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #333333;
+    font-weight: bold;
+    animation: typing 5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-right-color: transparent;
+    }
+    50% {
+        border-right-color: #333333;
+    }
+}
+
+/* Footer */
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.social-icon img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover img {
+    transform: scale(1.2);
+}
+
+
+.scroll-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333333;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+    z-index: 1000;
+}
+
+.scroll-button:hover {
+    background-color: #555555;
+}
